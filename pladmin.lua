@@ -1,6 +1,6 @@
 Execution_Runtime = tick()
 PLadmin_Settings = {
-  DefaultPrefix = "eph "; --The default prefix for pladmin
+  DefaultPrefix = "?"; --The default prefix for pladmin
   JoinNotify = false; --Notify when a player joins
   AutoRespawn = false; --Automatically loadcharacter when dying
   AntiVoid = true; --Automatically teleport up when falling into void
