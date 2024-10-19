@@ -1,6 +1,6 @@
 Execution_Runtime = tick()
 PLadmin_Settings = {
-  RunSpeed = 200,
+  LocalPlayer_RunSpeed = 200,
   DefaultPrefix = "?", -- Don't change it... Changing it from here will screw the script and make it not respond... Change it ingame using ?prefix <your new prefix>
   JoinNotify = false,
   AutoRespawn = false,
