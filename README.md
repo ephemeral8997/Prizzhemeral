@@ -13,3 +13,7 @@ Misc executors: Fluxus, Solara PC, Other Mobile Executors and etc
 
 ## Discord:
 https://discord.gg/EjVQCdH6W6
+
+## Credits:
+Original credits to [@elliexmIn](https://github.com/elliexmln) for creating Prizzlife.
+This is merely a fork with personal optimizations.
