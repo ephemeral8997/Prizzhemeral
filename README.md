@@ -1,7 +1,7 @@
-## PrizzLife (PLadmin), A Roblox Prison Life Script Designed for Mobile/PC
+## Prizzhemeral (PLadmin), A Roblox Prison Life Script Designed for Mobile/PC
 Loadstring:
 ```
-loadstring(game:HttpGet('https://raw.githubusercontent.com/elliexmln/PrizzLife/main/pladmin.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ephemeral8997/Prizzhemeral/refs/heads/main/pladmin.lua'))()
 ```
 
 Supported Executors:
