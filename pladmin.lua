@@ -1,6 +1,7 @@
 Execution_Runtime = tick()
 PLadmin_Settings = {
   DefaultPrefix = "?", -- Don't change it... Changing it from here will screw the script and make it not respond... Change it ingame using ?prefix <your new prefix>
+  -- In fact changing prefix either way screws the script...
   JoinNotify = false,
   AutoRespawn = false,
   AntiVoid = true,
