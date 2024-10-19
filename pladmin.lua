@@ -1,26 +1,24 @@
-loadstring([[
 Execution_Runtime = tick()
 PLadmin_Settings = {
-  DefaultPrefix = "eph "; --Default prefix ("eph cmds"
-  JoinNotify = false; --Notify when a player joins (pretty annoying tho)
-  AutoRespawn = false; --Auto respawn when dying (be careful since u could get exposed as an exploiter)
-  AntiVoid = true; --Automatically teleport up when falling into void (ig not working with prizzlife)
-  AntiTase = false; --U won't get tased even if they try
-  AntiArrest = false; --U won't get arrested even if they try (is cool but uknow they could'vejust suspected u)
-  AntiShoot = false; --Who shoots you dies
-  AntiPunch = false; --Who punches you dies
-  AntiFling = true; --Exploiters cant fling u
-  AntiShield = false; --Bypass police shield
-  AntiBring = false; --Exploiters cant teleport u (causes a bug with cars)
-  SilentAim = false; --Auto aim u will be cool
-  AutoGuns = false; --Get m9 ak & remington no tasers :((
+  DefaultPrefix = "?"; --The default prefix for pladmin
+  JoinNotify = false; --Notify when a player joins
+  AutoRespawn = true; --Automatically loadcharacter when dying
+  AntiVoid = true; --Automatically teleport up when falling into void
+  AntiTase = false; --Prevents you from being tased (100% no getconnections used because its absolute garbage)
+  AntiArrest = false; --Prevents you from being arrested (100% no getconnections used because its absolute garbage)
+  AntiShoot = false; --Kills player who tries to shoot you (Will be delayed if you have shitty ping, *COUGH* PLDT Users)
+  AntiPunch = false; --Instantly kill players who try to punch you
+  AntiFling = false; --Prevent exploiters from flinging you
+  AntiShield = false; --stop pay2win people and bypass their shields
+  AntiBring = false; --Prevent other exploiter(s) from bringing you
+  SilentAim = false; --Makes you shoot without missing a target
+  AutoGuns = false; --Automatically get all guns
   OldItemMethod = false; --Use teleport for getting items (USE THIS IF PRISON LIFE PATCHES THE TABLE METHOD)
   Fullbright = false; --Enable fullbrightness
   WhitelistRanked = false; --Automatically whitelist ranked players (DO NOT USE WHEN RANKING ALL PLAYERS)
-  RankedNukeCmds = false; --Ranked (whom u gave admin) guys can nuke the server (be careful)
-  RankedMultiCmd = false; --All Ranked (whom u gave admin) guys can use "all" user (not adviced tbh)
+  RankedNukeCmds = true; --Allow ranked players to use nuke commands (Very annoying)
+  RankedMultiCmd = true; --Allow ranked players to use the arguments: "all, and team", EX: ?kill all
   RankedOutput = true; --Chat the output commands of ranked players
-  WhisperToRanked = true; --Makes sure u dont send cmd output in public but whisper to Ranked (whom u gave admin) (MUST BE TRUE)
+  WhisperToRanked = true; --Use whisper for outputing commands for ranked players
 };wait()
-]])()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ephemeral8997/Prizzhemeral/main/Source/release_v0.8.1.lua'))()
