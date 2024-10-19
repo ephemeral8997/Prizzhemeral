@@ -1,6 +1,6 @@
 Execution_Runtime = tick()
 PLadmin_Settings = {
-  DefaultPrefix = "eph "; --Default prefix ("eph cmds")
+  DefaultPrefix = "?"; --Default prefix ("eph cmds")
   JoinNotify = false; --Notify when a player joins (pretty annoying tho)
   AutoRespawn = false; --Auto respawn when dying (be careful since u could get exposed as an exploiter)
   AntiVoid = true; --Automatically teleport up when falling into void (ig not working with prizzlife)
