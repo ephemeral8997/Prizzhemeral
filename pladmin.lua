@@ -21,4 +21,4 @@ PLadmin_Settings = {
   RankedOutput = true; --Chat the output commands of ranked players
   WhisperToRanked = true; --Makes sure u dont send cmd output in public but whisper to Ranked (whom u gave admin) (MUST BE TRUE)
 };wait()
-loadstring(game:HttpGet('https://raw.githubusercontent.com/ephemeral8997/Prizzhemeral/main/Source/release_v0.8.1.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/ephemeral8997/Prizzhemeral/refs/heads/main/Source/release_v0.8.1.lua'))()
