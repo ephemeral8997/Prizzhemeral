@@ -2,63 +2,57 @@ local ActionFrame = nil
 do
 	ActionFrame = Instance.new("Frame")
 	local PunchButton = Instance.new("ImageButton")
-	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
 	local CrawlButton = Instance.new("ImageButton")
-	local UIAspectRatioConstraint_2 = Instance.new("UIAspectRatioConstraint")
 	local RunButton = Instance.new("ImageButton")
-	local UIAspectRatioConstraint_3 = Instance.new("UIAspectRatioConstraint")
-	local UIAspectRatioConstraint_4 = Instance.new("UIAspectRatioConstraint")
+	local UIAspectRatioConstraint = Instance.new("UIAspectRatioConstraint")
+	local UIListLayout = Instance.new("UIListLayout")
 
 	ActionFrame.Name = "ActionFrame"
 	ActionFrame.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui"):WaitForChild("PLADMIN_INITIALS", 69)
 	ActionFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 	ActionFrame.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
-	ActionFrame.BorderColor3 = Color3.fromRGB(0, 0, 0)
 	ActionFrame.BorderSizePixel = 0
-	ActionFrame.Position = UDim2.new(0.949999988, 0, 0.400000006, 0)
-	ActionFrame.Size = UDim2.new(0.0841514692, 0, 0.376044571, 0)
+	ActionFrame.Position = UDim2.new(0.95, 0, 0.5, 0) -- Centered vertically
+	ActionFrame.Size = UDim2.new(0.15, 0, 0.5, 0) -- Wider for mobile
 
+	UIListLayout.Parent = ActionFrame
+	UIListLayout.FillDirection = Enum.FillDirection.Vertical
+	UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+	UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
+	UIListLayout.Padding = UDim.new(0, 10) -- Space between buttons
+
+	-- Punch Button
 	PunchButton.Name = "PunchButton"
 	PunchButton.Parent = ActionFrame
 	PunchButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	PunchButton.BackgroundTransparency = 0.650
-	PunchButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	PunchButton.BackgroundTransparency = 0.65
 	PunchButton.BorderSizePixel = 0
-	PunchButton.Size = UDim2.new(1, 0, 0.325925916, 0)
-	PunchButton.Image = "http://www.roblox.com/asset/?id=7651229347" --Yes, random gta sa fist icon
+	PunchButton.Size = UDim2.new(0.9, 0, 0.3, 0) -- Adjusted for touch target
+	PunchButton.Image = "http://www.roblox.com/asset/?id=7651229347"
+	PunchButton.LayoutOrder = 1
 
-	UIAspectRatioConstraint.Parent = PunchButton
-	UIAspectRatioConstraint.AspectRatio = 1.364
-
+	-- Crawl Button
 	CrawlButton.Name = "CrawlButton"
 	CrawlButton.Parent = ActionFrame
 	CrawlButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	CrawlButton.BackgroundTransparency = 0.650
-	CrawlButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	CrawlButton.BackgroundTransparency = 0.65
 	CrawlButton.BorderSizePixel = 0
-	CrawlButton.Position = UDim2.new(0, 0, 0.330000013, 0)
-	CrawlButton.Size = UDim2.new(1, 0, 0.325925916, 0)
+	CrawlButton.Size = UDim2.new(0.9, 0, 0.3, 0) -- Adjusted for touch target
 	CrawlButton.Image = "http://www.roblox.com/asset/?id=6925323189"
+	CrawlButton.LayoutOrder = 2
 
-	UIAspectRatioConstraint_2.Parent = CrawlButton
-	UIAspectRatioConstraint_2.AspectRatio = 1.364
-
+	-- Run Button
 	RunButton.Name = "RunButton"
 	RunButton.Parent = ActionFrame
 	RunButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-	RunButton.BackgroundTransparency = 0.650
-	RunButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	RunButton.BackgroundTransparency = 0.65
 	RunButton.BorderSizePixel = 0
-	RunButton.Position = UDim2.new(0, 0, 0.668945849, 0)
-	RunButton.Size = UDim2.new(1, 0, 0.325925916, 0)
+	RunButton.Size = UDim2.new(0.9, 0, 0.3, 0) -- Adjusted for touch target
 	RunButton.Image = "http://www.roblox.com/asset/?id=4425413038"
+	RunButton.LayoutOrder = 3
 
-	UIAspectRatioConstraint_3.Parent = RunButton
-	UIAspectRatioConstraint_3.AspectRatio = 1.364
-
-	UIAspectRatioConstraint_4.Parent = ActionFrame
-	UIAspectRatioConstraint_4.AspectRatio = 0.444
-	CrawlButton.Position = PunchButton.Position --optional: swap punch and crawl button
-	PunchButton.Position = UDim2.new(0, 0, 0.330000013, 0)
+	-- Aspect Ratio Constraint for ActionFrame
+	UIAspectRatioConstraint.Parent = ActionFrame
+	UIAspectRatioConstraint.AspectRatio = 0.5 -- Maintain a good aspect ratio
 end
 return ActionFrame
