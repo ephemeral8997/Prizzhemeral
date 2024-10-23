@@ -15,7 +15,7 @@
 local ne, Notif, NewToggleList, Settings, Saved, States, Toggles = ...
 local TPrefix = PLadmin_Settings and tostring(PLadmin_Settings.DefaultPrefix) or "?"
 ne("prefix [Prefix]", "Changes prefix (Default set to " .. TPrefix .. ")", false) --V
-ne("KILL CMDS", false, true) --KILL CMDS
+ne("test CMDS", false, true) --KILL CMDS
 ne("kill / oof / die [plr,random,team,all]", "Kills selected player(s)", false) --V
 ne("meleekill / mkill [plr,random,team,all]", "Kills selected player(s) using meleeEvent(s)", false) --V
 ne("hkill / hmk [plr,random,team,all]", "meleekill but hidden underground so no one can see it", false) --V
