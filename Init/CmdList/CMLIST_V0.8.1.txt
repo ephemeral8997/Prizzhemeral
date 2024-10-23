@@ -14,7 +14,6 @@
 
 local ne, Notif, NewToggleList, Settings, Saved, States, Toggles = ...
 local TPrefix = PLadmin_Settings and tostring(PLadmin_Settings.DefaultPrefix) or "?"
-ne("Invite: discord.gg/EjVQCdH6W6", "If you accidentally lose the gui, type /revert in chat", false)
 ne("prefix [Prefix]", "Changes prefix (Default set to " .. TPrefix .. ")", false) --V
 ne("KILL CMDS", false, true) --KILL CMDS
 ne("kill / oof / die [plr,random,team,all]", "Kills selected player(s)", false) --V
