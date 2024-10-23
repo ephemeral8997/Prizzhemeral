@@ -1,3 +1,17 @@
+-- <> required, [] optional
+
+-- Functions
+-- ne(<entry_name>, [description=false], [categoryFlag=false]) (AKA new entry function)
+-- Notif()
+-- NewToggleList(<toggle_name>, <description>, <default_value>, <toggle_callback>, [toggle_state=false])
+
+-- Class variables
+-- Settings
+-- Saved
+-- States
+-- Toggles
+
+
 local ne, Notif, NewToggleList, Settings, Saved, States, Toggles = ...
 local TPrefix = PLadmin_Settings and tostring(PLadmin_Settings.DefaultPrefix) or "?"
 ne("Invite: discord.gg/EjVQCdH6W6", "If you accidentally lose the gui, type /revert in chat", false)
@@ -606,4 +620,22 @@ if Execution_Runtime then
         "Loaded in " .. tostring(tick() - Execution_Runtime) .. " second(s). github.com/elliexmln/PrizzLife",
         6
     )
+end
+
+
+
+
+-- Open the file for writing
+local file = io.open("output.txt.txt", "w")
+if file then
+    -- Write each variable to the file
+    file:write("Settings: " .. Settings .. "\n")
+    file:write("Saved: " .. Saved .. "\n")
+    file:write("States: " .. States .. "\n")
+    file:write("Toggles: " .. Toggles .. "\n")
+    
+    -- Close the file
+    file:close()
+else
+    print("Error opening file.")
 end
