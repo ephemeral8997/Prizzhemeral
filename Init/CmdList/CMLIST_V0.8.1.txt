@@ -620,7 +620,6 @@ if Execution_Runtime then
         "Loaded in " .. tostring(tick() - Execution_Runtime) .. " second(s). github.com/elliexmln/PrizzLife",
         6
     )
-end
 
 
 
