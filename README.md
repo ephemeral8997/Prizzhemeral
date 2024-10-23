@@ -26,3 +26,5 @@ loadstring(game:HttpGet('https://raw.githubusercontent.com/ephemeral8997/Prizzhe
 Just a personal project I’m messing with.
 Is meant for personal and educational use.
 Pull requests are welcome!
+Unlike original prizzlife, this project includes a strict license on how you modify / copycat this script.
+Good luck!
