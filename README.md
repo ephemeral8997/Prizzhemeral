@@ -28,3 +28,5 @@ Is meant for personal and educational use.
 Pull requests are welcome!
 Unlike original prizzlife, this project includes a strict license on how you modify / copycat this script.
 Good luck!
+
+I guess this "release_v0.8.1.lua" file contains CMDLIST + all init folder combined in one file.
