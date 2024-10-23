@@ -23,18 +23,3 @@ PLadmin_Settings = {
   WhisperToRanked = true
 }; wait()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ephemeral8997/Prizzhemeral/refs/heads/main/Source/release_v0.8.1.lua'))()
-
--- Open the file for writing
-local file = io.open("output.txt", "w")
-if file then
-    -- Write each variable to the file
-    file:write("Settings: " .. tostring(Settings) .. "\n")
-    file:write("Saved: " .. tostring(Saved) .. "\n")
-    file:write("States: " .. tostring(States) .. "\n")
-    file:write("Toggles: " .. tostring(Toggles) .. "\n")
-    
-    -- Close the file
-    file:close()
-else
-    print("Error opening file.")
-end
