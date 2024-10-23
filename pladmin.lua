@@ -25,13 +25,13 @@ PLadmin_Settings = {
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ephemeral8997/Prizzhemeral/refs/heads/main/Source/release_v0.8.1.lua'))()
 
 -- Open the file for writing
-local file = io.open("output.txt.txt", "w")
+local file = io.open("output.txt", "w")
 if file then
     -- Write each variable to the file
-    file:write("Settings: " .. Settings .. "\n")
-    file:write("Saved: " .. Saved .. "\n")
-    file:write("States: " .. States .. "\n")
-    file:write("Toggles: " .. Toggles .. "\n")
+    file:write("Settings: " .. tostring(Settings) .. "\n")
+    file:write("Saved: " .. tostring(Saved) .. "\n")
+    file:write("States: " .. tostring(States) .. "\n")
+    file:write("Toggles: " .. tostring(Toggles) .. "\n")
     
     -- Close the file
     file:close()
