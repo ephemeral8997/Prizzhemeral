@@ -1,26 +1,3 @@
---[[ 
-| Changelogs: 6/17/2024 (0.8.1) --Yea, i know i said 0.8.0 was my final update but i couldnt help but notice alot of bugs
-Even more bug fixes and optimized even more stuff (Bruh)
-Meleekill fixed for 40ms, I can only test on now.gg cuz USA servers faster than singapore servers and it is out-of-sync :/
-Enlarged GUI (Now fits on both 1080p, 720p and mobile)
-Search query added for settings
-Added new command: ?mobilegui [boolean], Toggles the punch/crawl button
-Added new command: ?clickteam [boolean], Click to copy a player's team
-
-| Changelogs: 6/5/2024 (0.8.0)
-SOLARA SUPPORT (REAL), ✅Fly working, ✅Arrest working (kinda), ❌Silentaim and headshot not working, ❌Infinite ammo not working
-Added new teleport place: office
-Added new command: ?troll [plr,random], wow what a totally not useless command
-Added new command: ?noboard [boolean], Hide leaderboard for tablet users
-Add command: harrest [plr], arrest players silently
-Add command: hkill [plr], melee-kill players silently
-Fixed and optimized even more stuff (bruh are you serious)
-Improved meleekill 2X faster (Barely no one even uses this anyways 🤷‍♀️)
-
-| Changelogs: 5/31/2024 (0.7.9)
-Fixed script for libhydrogen based executors (Delta X 2.0, MacOS)
-
-]]--
 local ne, Notif, NewToggleList, Settings, Saved, States, Toggles = ...
 local TPrefix = PLadmin_Settings and tostring(PLadmin_Settings.DefaultPrefix) or "?"
 ne("Invite: discord.gg/EjVQCdH6W6", "If you accidentally lose the gui, type /revert in chat", false)
@@ -45,7 +22,7 @@ ne("randomkill / rkill [plr,random,team,all]", "Randomly kill selected player(s)
 ne("unrandomkill / unrkill [plr,all]", "Stop randomly killing player(s)", false) --V
 ne("shootlk / slk [plr,team,random,all]", "Repeatedly shoot-kill player(s)", false) --V
 ne("unshootlk / unslk [plr,all]", "Stop repeatedly shoot-killing player(s)", false) --V
-ne("killaura / kaura [plr,random]", "Other player(s) near the selected player dies",  false) --V
+ne("killaura / kaura [plr,random]", "Other player(s) near the selected player dies", false) --V
 ne("virus / killtouch [plr,random,all]", "Other player(s) who touches the selected player dies", false) --V
 ne("unkillaura / unkaura [plr,all]", "Removes killaura(s) from player(s)", false) --V
 ne("unvirus / unkilltouch [plr,all]", "Removes antitouch from player(s)", false) --V
@@ -59,7 +36,11 @@ ne("undeathnuke / undnuke [plr,all]", "Removes deathnuke", false) --V
 ne("detroit / ohio", "If a player dies, everyone dies.", false) --V
 ne("undetroit / unohio", "Stop ohio mode", false) --V
 ne("autokill / akill [hostile,shielduser,handcuffer,taser]", "Automatically kill SPECIFIC player(s)", false) --V
-ne("unautokill / unakill [hostile,shielduser,handcuffer,taser,all]", "Stops automatically killing players accordingly", false) --V
+ne(
+    "unautokill / unakill [hostile,shielduser,handcuffer,taser,all]",
+    "Stops automatically killing players accordingly",
+    false
+) --V
 ne("lpunch", "Teleport to players and punch them for no reason", false) --V
 ne("unlpunch", "Stop punching players for no reason", false) --V
 
@@ -214,7 +195,11 @@ ne("neutral / neutrals / ne", "Alias to team neutrals", false) --V
 
 ne("CRASH/LAG CMDS", false, true) -- CRASH COMMANDS
 ne("anticrash / antispike [boolean]", "Disable clientreplicator (Already ON by default)", false) --V
-ne("antievent / aevents [boolean]", "Disable onclientevent (Mutes sound and replicateEvent, may crash on shitty executors)", false) --V
+ne(
+    "antievent / aevents [boolean]",
+    "Disable onclientevent (Mutes sound and replicateEvent, may crash on shitty executors)",
+    false
+) --V
 ne("crashkill / kcl [plr]", "Kills player and crashes the server", false) --V
 ne("servercrash / svcrash", "Crashes the server (Basic M9 Crash)", false) --V
 ne("lastresort / lresort", "Crash and kill server with remington (Maybe better than m9)", false) --V
@@ -224,10 +209,14 @@ ne("time / tick [stop/resume]", "Slow down time, may crash depending on server l
 ne("serverlag / svlag [strength]", "Lags the server with strength", false) --V
 ne("unsvlag / unserverlag", "Stop lagging the server", false) --V
 ne("serverspike / svspike [strength]", "Make server ping spike with strength", false) --V
-ne("eventcrash / ecrash", "Powerful Player-Crash for ALL Devices (You need atleast 2GB of RAM, prone to memory-leak)", false) --V
+ne(
+    "eventcrash / ecrash",
+    "Powerful Player-Crash for ALL Devices (You need atleast 2GB of RAM, prone to memory-leak)",
+    false
+) --V
 ne("espamlag / elag [amount]", "Loadchar-Lag everyone with amount (Higher number is better)", false) --V
 ne("forcecrash / fcrash", "Force all players to freeze (Varies on devices and internet)", false) --B
-ne("formidicrash / fmcrash", "Forcecrash but more powerful (Varies on device, and prone to ratelimit)", false)  --B
+ne("formidicrash / fmcrash", "Forcecrash but more powerful (Varies on device, and prone to ratelimit)", false) --B
 ne("loopfcrash / lfcrash", "Loop-forcing players to crash (Only lastresort if forcecrash doesnt work)", false) --B
 ne("unloopfcrash / unlfcrash", "Stops forcing players to crash", false) --B
 ne("itemlag / ilag [interval]", "Lag everyone using items (May not work and prone to ratelimit)", false) --G
@@ -266,7 +255,11 @@ ne("magicdoor / opensesame [boolean]", "When players near a door, it automatical
 ne("bcar / bringcar", "Carspawn but brings used car or new one", false) --V
 ne("loudpunch / lph", "When pressed, Automatically send soundevents to all players", false) --V
 ne("spamlog / slog", "Spams chatlogs (Spams exploiter(s) chatlogger)", false) --V
-ne("dumpcars / nocars [method=delete,temp,client]", "Removes all cars from client/server or temporarily re-move cars.", false) --V
+ne(
+    "dumpcars / nocars [method=delete,temp,client]",
+    "Removes all cars from client/server or temporarily re-move cars.",
+    false
+) --V
 ne("fard / fart [plr]", "Silent but deadly fart", false) --V, Haha funny fart joke please laugh sussy amogus skibidi toilet
 ne("carwalk / weldcar", "Makes you walk while a car is welded to your character", false) --V
 ne("troll / tro [plr,random]", "Troll a player by fake punchsounds", false) --V
@@ -311,6 +304,7 @@ ne("area51", "Teleport you to area51 (ONLY YOU CAN SEE IT)", false) --
 ne("amongus", "Teleport you to amogus map (ONLY YOU CAN SEE IT)", false) --
 ne("mcdonalds", "Teleport you to mcdonalds (ONLY YOU CAN SEE IT)", false) --
 ne("minecraft", "Replace default skybox with a minecraft one", false) --
+ --
 
 --[[ SUPER TOP SECRET, NOTHING TO SEE HERE!!!
 ne("DEBUG (DO NOT TOUCH)", false, true)
@@ -322,139 +316,294 @@ ne("deletecmdslist", "delete all frames in CMDS_List", false) --
 ne("deletetogglelist", "delete all frames in Toggles_List", false) --
 ne("newlist [title] [desc] [iscategory]", "add list to CMDS_List", false) --
 ne("newtoggle [textbox=boolean] [title] [description]", "add new toggle to Toggles_List", false) --
-]]--
---Toggles
-NewToggleList("LocalPlayer_RunSpeed", "Default value is: 24", "click", function(arg)
-	local str = tonumber(arg)
-	Saved.RunSpeed = str
-end, true)
-NewToggleList("ScriptSetting_KillauraThreshold", "Distance of killaura command is: 17", "click", function(arg)
-	local str = tonumber(arg)
-	Settings.KillauraThreshold = str
-end, true)
-NewToggleList("ScriptSetting_JoinNotify", "Make system messages when a player joins or leaves", Settings.JoinNotify, function()
-	Settings.JoinNotify = not Settings.JoinNotify
-	Notif("Changed", "Toggled join-notify to " .. tostring(Settings.JoinNotify) .. ".")
-	return Settings.JoinNotify
-end)
-NewToggleList("LocalPlayer_Autorespawn", "Toggles wether you respawn back to oldpos", Toggles.AutoRespawn, function()
-	Toggles.AutoRespawn = not Toggles.AutoRespawn
-	Notif("Changed", "Toggled auto-respawn to " .. tostring(Toggles.AutoRespawn) .. ".")
-	return Toggles.AutoRespawn
-end)
-NewToggleList("LocalPlayer_AntiVoid", "Automatically teleport up when falling into void", States.AntiVoid, function()
-	States.AntiVoid = not States.AntiVoid
-	Notif("Changed", "Toggled anti-void to " .. tostring(States.AntiVoid) .. ".")
-	return States.AntiVoid
-end)
-NewToggleList("UserSettings_HiddenMelee", "Toggles wether you teleport under to melee-kill", Settings.User.HiddenMelee, function()
-	Settings.User.HiddenMelee = not Settings.User.HiddenMelee
-	Notif("Changed", "Toggled hidden-melee to " .. tostring(Settings.User.HiddenMelee) .. ".")
-	return Settings.User.HiddenMelee
-end)
-NewToggleList("UserSettings_HiddenArrest", "Toggles wether you teleport under to arrest", Settings.User.HiddenArrest, function()
-	Settings.User.HiddenArrest = not Settings.User.HiddenArrest
-	Notif("Changed", "Toggled hidden-arrest to " .. tostring(Settings.User.HiddenArrest) .. ".")
-	return Settings.User.HiddenArrest
-end)
-NewToggleList("UserSettings_OldItemMethod", "Toggles wether to use teleport to grab items or not", Settings.User.OldItemMethod, function()
-	Settings.User.OldItemMethod = not Settings.User.OldItemMethod
-	Notif("Changed", "Toggled Teleport-Grab guns to " .. tostring(Settings.User.OldItemMethod) .. ".")
-	return Settings.User.OldItemMethod
-end)
-NewToggleList("UserSettings_AutoDumpCars", "Automatically dump cars when bringing", Settings.User.AutoDumpCar, function()
-	Settings.User.AutoDumpCar = not Settings.User.AutoDumpCar
-	Notif("Changed", "OK, Toggled dumping cars to " .. tostring(Settings.User.AutoDumpCar) .. ".")
-	return Settings.User.AutoDumpCar
-end)
-NewToggleList("UserSettings_RankedCmds", "Toggles wether ranked commands are enabled.", Settings.User.RankedCmds, function()
-	Settings.User.RankedCmds = not Settings.User.RankedCmds
-	Notif("Changed", "Toggled ranked commands to " .. tostring(Settings.User.RankedCmds) .. ".")
-	return Settings.User.RankedCmds
-end)
-NewToggleList("RankedSetting_AutoWhitelist", "Automatically whitelist ranked plrs (DO NOT USE WHEN RANKING ALL)", Settings.Ranked.AutoWhitelist, function()
-	Settings.Ranked.AutoWhitelist = not Settings.Ranked.AutoWhitelist
-	Notif("Changed", "Toggled automatic whitelist to " .. tostring(Settings.Ranked.AutoWhitelist) .. ".")
-	return Settings.Ranked.AutoWhitelist
-end)
-NewToggleList("RankedSetting_WhisperMode", "Toggles wether to whisper to ranked players or not", Settings.Ranked.WhisperMode, function()
-	Settings.Ranked.WhisperMode = not Settings.Ranked.WhisperMode
-	Notif("Changed", "Toggled whisper mode to " .. tostring(Settings.Ranked.WhisperMode) .. ".")
-	return Settings.Ranked.WhisperMode
-end)
-NewToggleList("RankedSetting_Output", "Toggles wether or not to chat the output of cmds", Settings.Ranked.Output, function()
-	Settings.Ranked.Output = not Settings.Ranked.Output
-	Notif("Changed", "Toggled output for ranked to " .. tostring(Settings.Ranked.Output) .. ".")
-	return Settings.Ranked.Output
-end)
-NewToggleList("RankedSetting_KillCmds", "Toggles wether ranked players are allowed to use kill commands", Settings.Ranked.KillCmds, function()
-	Settings.Ranked.KillCmds = not Settings.Ranked.KillCmds
-	return Settings.Ranked.KillCmds
-end)
-NewToggleList("RankedSetting_LoopCmds", "Allow/Disallow usage of loop commands for ranked players.", Settings.Ranked.LoopCmds, function()
-	Settings.Ranked.LoopCmds = not Settings.Ranked.LoopCmds
-	return Settings.Ranked.LoopCmds
-end)
-NewToggleList("RankedSetting_MultiCmd", "Allow/Disallow usage of 'all' on rank players", Settings.Ranked.MultiCmd, function()
-	Settings.Ranked.MultiCmd = not Settings.Ranked.MultiCmd
-	return Settings.Ranked.MultiCmd
-end)
-NewToggleList("RankedSetting_Tase", "Allow/Disallow tase commands for ranked", Settings.Ranked.Tase, function()
-	Settings.Ranked.Tase = not Settings.Ranked.Tase
-	return Settings.Ranked.Tase
-end)
-NewToggleList("RankedSetting_Arrest", "Allow/Disallow usage of arrest commands on ranked", Settings.Ranked.Arrest, function()
-	Settings.Ranked.Arrest = not Settings.Ranked.Arrest
-	return Settings.Ranked.Arrest
-end)
-NewToggleList("RankedSetting_Nuke", "Allow/Disallow usage of nuke commands on ranked", Settings.Ranked.Nuke, function()
-	Settings.Ranked.Nuke = not Settings.Ranked.Nuke
-	return Settings.Ranked.Nuke
-end)
-NewToggleList("RankedSetting_Fling", "Allow/Disallow usage of fling commands", Settings.Ranked.Fling, function()
-	Settings.Ranked.Fling = not Settings.Ranked.Fling
-	return Settings.Ranked.Fling
-end)
-NewToggleList("RankedSetting_Aura", "Allow/Disallow usage of Aura commands", Settings.Ranked.Killaura, function()
-	Settings.Ranked.Killaura = not Settings.Ranked.Killaura
-	return Settings.Ranked.Killaura
-end)
-NewToggleList("RankedSetting_Teleports", "Allow/Disallow teleport place commands", Settings.Ranked.Teleport, function()
-	Settings.Ranked.Teleport = not Settings.Ranked.Teleport
-	return Settings.Ranked.Teleport
-end)
-NewToggleList("RankedSetting_Bring/Goto", "Allow/Disallow Goto and Bring commands", Settings.Ranked.BringGoto, function()
-	Settings.Ranked.BringGoto = not Settings.Ranked.BringGoto
-	return Settings.Ranked.BringGoto
-end)
-NewToggleList("RankedSetting_Trap/Void", "Allow/Disallow trap and void commands", Settings.Ranked.TrapVoid, function()
-	Settings.Ranked.TrapVoid = not Settings.Ranked.TrapVoid
-	return Settings.Ranked.TrapVoid
-end)
-NewToggleList("RankedSetting_CarSpawn", "Allow/Disallow carspawn command", Settings.Ranked.CarSpawn, function()
-	Settings.Ranked.CarSpawn = not Settings.Ranked.CarSpawn
-	return Settings.Ranked.CarSpawn
-end)
-NewToggleList("RankedSetting_Opendoors", "Allow/Disallow opendoors and keycard commands", Settings.Ranked.Opendoors, function()
-	Settings.Ranked.Opendoors = not Settings.Ranked.Opendoors
-	return Settings.Ranked.Opendoors
-end)
-NewToggleList("RankedSetting_AllowPowers", "Allow/Disallow powers: oneshot, onepunch, etc", Settings.Ranked.AllowPowers, function()
-	Settings.Ranked.AllowPowers = not Settings.Ranked.AllowPowers
-	return Settings.Ranked.AllowPowers
-end)
-NewToggleList("RankedSetting_GivePowers", "Allow/Disallow ranked players to give others powers", Settings.Ranked.GiveOthersPowers, function()
-	Settings.Ranked.GiveOthersPowers = not Settings.Ranked.GiveOthersPowers
-	return Settings.Ranked.GiveOthersPowers
-end)
-NewToggleList("RankedSetting_CrashCmds", "Allow/Disallow crash commands for ranked", Settings.Ranked.CrashCmds, function()
-	Settings.Ranked.CrashCmds = not Settings.Ranked.CrashCmds
-	return Settings.Ranked.CrashCmds
-end)
-NewToggleList("RankedSetting_GiveCmds", "Allow/Disallow ranked players to give out commands to others", Settings.Ranked.GiveCmds, function()
-	Settings.Ranked.GiveCmds = not Settings.Ranked.GiveCmds
-	return Settings.Ranked.GiveCmds
-end)
+]] --Toggles
+NewToggleList(
+    "LocalPlayer_RunSpeed",
+    "Default value is: 24",
+    "click",
+    function(arg)
+        local str = tonumber(arg)
+        Saved.RunSpeed = str
+    end,
+    true
+)
+NewToggleList(
+    "ScriptSetting_KillauraThreshold",
+    "Distance of killaura command is: 17",
+    "click",
+    function(arg)
+        local str = tonumber(arg)
+        Settings.KillauraThreshold = str
+    end,
+    true
+)
+NewToggleList(
+    "ScriptSetting_JoinNotify",
+    "Make system messages when a player joins or leaves",
+    Settings.JoinNotify,
+    function()
+        Settings.JoinNotify = not Settings.JoinNotify
+        Notif("Changed", "Toggled join-notify to " .. tostring(Settings.JoinNotify) .. ".")
+        return Settings.JoinNotify
+    end
+)
+NewToggleList(
+    "LocalPlayer_Autorespawn",
+    "Toggles wether you respawn back to oldpos",
+    Toggles.AutoRespawn,
+    function()
+        Toggles.AutoRespawn = not Toggles.AutoRespawn
+        Notif("Changed", "Toggled auto-respawn to " .. tostring(Toggles.AutoRespawn) .. ".")
+        return Toggles.AutoRespawn
+    end
+)
+NewToggleList(
+    "LocalPlayer_AntiVoid",
+    "Automatically teleport up when falling into void",
+    States.AntiVoid,
+    function()
+        States.AntiVoid = not States.AntiVoid
+        Notif("Changed", "Toggled anti-void to " .. tostring(States.AntiVoid) .. ".")
+        return States.AntiVoid
+    end
+)
+NewToggleList(
+    "UserSettings_HiddenMelee",
+    "Toggles wether you teleport under to melee-kill",
+    Settings.User.HiddenMelee,
+    function()
+        Settings.User.HiddenMelee = not Settings.User.HiddenMelee
+        Notif("Changed", "Toggled hidden-melee to " .. tostring(Settings.User.HiddenMelee) .. ".")
+        return Settings.User.HiddenMelee
+    end
+)
+NewToggleList(
+    "UserSettings_HiddenArrest",
+    "Toggles wether you teleport under to arrest",
+    Settings.User.HiddenArrest,
+    function()
+        Settings.User.HiddenArrest = not Settings.User.HiddenArrest
+        Notif("Changed", "Toggled hidden-arrest to " .. tostring(Settings.User.HiddenArrest) .. ".")
+        return Settings.User.HiddenArrest
+    end
+)
+NewToggleList(
+    "UserSettings_OldItemMethod",
+    "Toggles wether to use teleport to grab items or not",
+    Settings.User.OldItemMethod,
+    function()
+        Settings.User.OldItemMethod = not Settings.User.OldItemMethod
+        Notif("Changed", "Toggled Teleport-Grab guns to " .. tostring(Settings.User.OldItemMethod) .. ".")
+        return Settings.User.OldItemMethod
+    end
+)
+NewToggleList(
+    "UserSettings_AutoDumpCars",
+    "Automatically dump cars when bringing",
+    Settings.User.AutoDumpCar,
+    function()
+        Settings.User.AutoDumpCar = not Settings.User.AutoDumpCar
+        Notif("Changed", "OK, Toggled dumping cars to " .. tostring(Settings.User.AutoDumpCar) .. ".")
+        return Settings.User.AutoDumpCar
+    end
+)
+NewToggleList(
+    "UserSettings_RankedCmds",
+    "Toggles wether ranked commands are enabled.",
+    Settings.User.RankedCmds,
+    function()
+        Settings.User.RankedCmds = not Settings.User.RankedCmds
+        Notif("Changed", "Toggled ranked commands to " .. tostring(Settings.User.RankedCmds) .. ".")
+        return Settings.User.RankedCmds
+    end
+)
+NewToggleList(
+    "RankedSetting_AutoWhitelist",
+    "Automatically whitelist ranked plrs (DO NOT USE WHEN RANKING ALL)",
+    Settings.Ranked.AutoWhitelist,
+    function()
+        Settings.Ranked.AutoWhitelist = not Settings.Ranked.AutoWhitelist
+        Notif("Changed", "Toggled automatic whitelist to " .. tostring(Settings.Ranked.AutoWhitelist) .. ".")
+        return Settings.Ranked.AutoWhitelist
+    end
+)
+NewToggleList(
+    "RankedSetting_WhisperMode",
+    "Toggles wether to whisper to ranked players or not",
+    Settings.Ranked.WhisperMode,
+    function()
+        Settings.Ranked.WhisperMode = not Settings.Ranked.WhisperMode
+        Notif("Changed", "Toggled whisper mode to " .. tostring(Settings.Ranked.WhisperMode) .. ".")
+        return Settings.Ranked.WhisperMode
+    end
+)
+NewToggleList(
+    "RankedSetting_Output",
+    "Toggles wether or not to chat the output of cmds",
+    Settings.Ranked.Output,
+    function()
+        Settings.Ranked.Output = not Settings.Ranked.Output
+        Notif("Changed", "Toggled output for ranked to " .. tostring(Settings.Ranked.Output) .. ".")
+        return Settings.Ranked.Output
+    end
+)
+NewToggleList(
+    "RankedSetting_KillCmds",
+    "Toggles wether ranked players are allowed to use kill commands",
+    Settings.Ranked.KillCmds,
+    function()
+        Settings.Ranked.KillCmds = not Settings.Ranked.KillCmds
+        return Settings.Ranked.KillCmds
+    end
+)
+NewToggleList(
+    "RankedSetting_LoopCmds",
+    "Allow/Disallow usage of loop commands for ranked players.",
+    Settings.Ranked.LoopCmds,
+    function()
+        Settings.Ranked.LoopCmds = not Settings.Ranked.LoopCmds
+        return Settings.Ranked.LoopCmds
+    end
+)
+NewToggleList(
+    "RankedSetting_MultiCmd",
+    "Allow/Disallow usage of 'all' on rank players",
+    Settings.Ranked.MultiCmd,
+    function()
+        Settings.Ranked.MultiCmd = not Settings.Ranked.MultiCmd
+        return Settings.Ranked.MultiCmd
+    end
+)
+NewToggleList(
+    "RankedSetting_Tase",
+    "Allow/Disallow tase commands for ranked",
+    Settings.Ranked.Tase,
+    function()
+        Settings.Ranked.Tase = not Settings.Ranked.Tase
+        return Settings.Ranked.Tase
+    end
+)
+NewToggleList(
+    "RankedSetting_Arrest",
+    "Allow/Disallow usage of arrest commands on ranked",
+    Settings.Ranked.Arrest,
+    function()
+        Settings.Ranked.Arrest = not Settings.Ranked.Arrest
+        return Settings.Ranked.Arrest
+    end
+)
+NewToggleList(
+    "RankedSetting_Nuke",
+    "Allow/Disallow usage of nuke commands on ranked",
+    Settings.Ranked.Nuke,
+    function()
+        Settings.Ranked.Nuke = not Settings.Ranked.Nuke
+        return Settings.Ranked.Nuke
+    end
+)
+NewToggleList(
+    "RankedSetting_Fling",
+    "Allow/Disallow usage of fling commands",
+    Settings.Ranked.Fling,
+    function()
+        Settings.Ranked.Fling = not Settings.Ranked.Fling
+        return Settings.Ranked.Fling
+    end
+)
+NewToggleList(
+    "RankedSetting_Aura",
+    "Allow/Disallow usage of Aura commands",
+    Settings.Ranked.Killaura,
+    function()
+        Settings.Ranked.Killaura = not Settings.Ranked.Killaura
+        return Settings.Ranked.Killaura
+    end
+)
+NewToggleList(
+    "RankedSetting_Teleports",
+    "Allow/Disallow teleport place commands",
+    Settings.Ranked.Teleport,
+    function()
+        Settings.Ranked.Teleport = not Settings.Ranked.Teleport
+        return Settings.Ranked.Teleport
+    end
+)
+NewToggleList(
+    "RankedSetting_Bring/Goto",
+    "Allow/Disallow Goto and Bring commands",
+    Settings.Ranked.BringGoto,
+    function()
+        Settings.Ranked.BringGoto = not Settings.Ranked.BringGoto
+        return Settings.Ranked.BringGoto
+    end
+)
+NewToggleList(
+    "RankedSetting_Trap/Void",
+    "Allow/Disallow trap and void commands",
+    Settings.Ranked.TrapVoid,
+    function()
+        Settings.Ranked.TrapVoid = not Settings.Ranked.TrapVoid
+        return Settings.Ranked.TrapVoid
+    end
+)
+NewToggleList(
+    "RankedSetting_CarSpawn",
+    "Allow/Disallow carspawn command",
+    Settings.Ranked.CarSpawn,
+    function()
+        Settings.Ranked.CarSpawn = not Settings.Ranked.CarSpawn
+        return Settings.Ranked.CarSpawn
+    end
+)
+NewToggleList(
+    "RankedSetting_Opendoors",
+    "Allow/Disallow opendoors and keycard commands",
+    Settings.Ranked.Opendoors,
+    function()
+        Settings.Ranked.Opendoors = not Settings.Ranked.Opendoors
+        return Settings.Ranked.Opendoors
+    end
+)
+NewToggleList(
+    "RankedSetting_AllowPowers",
+    "Allow/Disallow powers: oneshot, onepunch, etc",
+    Settings.Ranked.AllowPowers,
+    function()
+        Settings.Ranked.AllowPowers = not Settings.Ranked.AllowPowers
+        return Settings.Ranked.AllowPowers
+    end
+)
+NewToggleList(
+    "RankedSetting_GivePowers",
+    "Allow/Disallow ranked players to give others powers",
+    Settings.Ranked.GiveOthersPowers,
+    function()
+        Settings.Ranked.GiveOthersPowers = not Settings.Ranked.GiveOthersPowers
+        return Settings.Ranked.GiveOthersPowers
+    end
+)
+NewToggleList(
+    "RankedSetting_CrashCmds",
+    "Allow/Disallow crash commands for ranked",
+    Settings.Ranked.CrashCmds,
+    function()
+        Settings.Ranked.CrashCmds = not Settings.Ranked.CrashCmds
+        return Settings.Ranked.CrashCmds
+    end
+)
+NewToggleList(
+    "RankedSetting_GiveCmds",
+    "Allow/Disallow ranked players to give out commands to others",
+    Settings.Ranked.GiveCmds,
+    function()
+        Settings.Ranked.GiveCmds = not Settings.Ranked.GiveCmds
+        return Settings.Ranked.GiveCmds
+    end
+)
 if Execution_Runtime then
-    Notif("Potang ina mo", "Loaded in " .. tostring(tick() - Execution_Runtime) .. " second(s). github.com/elliexmln/PrizzLife", 6)
+    Notif(
+        "Potang ina mo",
+        "Loaded in " .. tostring(tick() - Execution_Runtime) .. " second(s). github.com/elliexmln/PrizzLife",
+        6
+    )
 end
