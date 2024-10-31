@@ -21,6 +21,6 @@ PLadmin_Settings = {
   RankedOutput = true,
   WhisperToRanked = true
 }
-wait(10)
+wait(20) -- Runtime issue
 Execution_Runtime = tick()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ephemeral8997/Prizzhemeral/refs/heads/main/Source/release_v0.8.1.lua'))()
