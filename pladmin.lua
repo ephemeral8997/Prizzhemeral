@@ -21,11 +21,10 @@ PLadmin_Settings = {
   RankedOutput = true,
   WhisperToRanked = true
 }
-wait(0.1) -- Runtime issue
 Execution_Runtime = tick()
 --loadstring(game:HttpGet('https://raw.githubusercontent.com/ephemeral8997/Prizzhemeral/refs/heads/main/Source/release_v0.8.1.lua'))() -- mine
 loadstring(game:HttpGet('https://raw.githubusercontent.com/elliexmln/PrizzLife/main/Source/release_v0.8.1.lua'))() -- elixmin
-
+wait(10) -- Runtime issue
 
 --[==[
 Known issues:-
