@@ -24,3 +24,9 @@ PLadmin_Settings = {
 wait(0.1) -- Runtime issue
 Execution_Runtime = tick()
 loadstring(game:HttpGet('https://raw.githubusercontent.com/ephemeral8997/Prizzhemeral/refs/heads/main/Source/release_v0.8.1.lua'))()
+
+--[==[
+Known issues:-
+1. High CPU spike on startup because of unoptimized MoonSec V3 source release.
+2. Command-specific errors.
+]==]--
