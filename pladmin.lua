@@ -2,7 +2,7 @@ PLadmin_Settings = {
   DefaultPrefix = "?", -- Don't change it... Changing it from here will screw the script and make it not respond... Change it ingame using ?prefix <your new prefix>
   -- In fact changing prefix either way screws the script...
   JoinNotify = false,
-  AutoRespawn = true,
+  AutoRespawn = false,
   AntiVoid = true,
   AntiTase = false, -- doing this to eliminate abusers
   AntiArrest = false, -- doing this to eliminate abusers
