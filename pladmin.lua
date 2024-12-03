@@ -3,7 +3,7 @@ PLadmin_Settings = {
   -- In fact changing prefix either way screws the script...
   JoinNotify = false,
   AutoRespawn = false,
-  AntiVoid = true,
+  AntiVoid = false,
   AntiTase = false, -- doing this to eliminate abusers
   AntiArrest = false, -- doing this to eliminate abusers
   AntiShoot = false, -- doing this to eliminate abusers
@@ -14,7 +14,7 @@ PLadmin_Settings = {
   SilentAim = false,
   AutoGuns = false,
   OldItemMethod = false, -- Keep it false.
-  Fullbright = false, -- CPU SPIKES
+  Fullbright = true, -- CPU SPIKES
   WhitelistRanked = false,
   RankedNukeCmds = false, -- Should be off
   RankedMultiCmd = false, -- Should be off
@@ -22,12 +22,6 @@ PLadmin_Settings = {
   WhisperToRanked = true
 }
 Execution_Runtime = tick()
-
--- pcall(function()
---   loadstring(game:HttpGet('https://raw.githubusercontent.com/ephemeral8997/Prizzhemeral/refs/heads/main/Source/release_v0.8.1.lua'))() -- mine
--- end)
-
-wait(0.1);
 
 pcall(function()
   loadstring(game:HttpGet('https://raw.githubusercontent.com/elliexmln/PrizzLife/main/Source/release_v0.8.1.lua'))() -- elixmin
